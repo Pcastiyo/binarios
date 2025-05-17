@@ -16,6 +16,18 @@ function BinarioADecimal(num) {
   */
 
   //recorrer el array con un for
+  let resultado=0;
+  //obtener la cantidad de caracteres del numero binario-> LONGITUD
+  let longitud = num.length;
+  //recorrer el string de izquierda a derecha
+  for(let i=0; i < longitud; i++){
+      let bit = num[i];
+      //calcular el exponente que le corresponde a cada bit
+      let exponente = longitud-1-i 
+      //multiplicar por dos y elevarlo al exponente 
+      resultado+=bit * (2**exponente)
+  }
+   return resultado
 
  
 
@@ -29,7 +41,14 @@ function DecimalABinario(num) {
  cambiar el orden de los restos y agruparlos para devolverlos como string
 
 */
+let resultado="";
+//while mientras
+while(num > 0){
+  resultado = num % 2 + resultado
+  num= Math.floor(num/2)
+}
 
+  return resultado;
   
 }
 
